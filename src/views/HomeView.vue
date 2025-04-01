@@ -1,18 +1,19 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
-    <HelloWorld msg="Welcome to Fana-Mind Online Learning System" />
+    <!-- <WelcomeMessage msg="Welcome to Fana-Mind Academy" /> -->
+     <WelcomeMessage />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import WelcomeMessage from "@/components/WelcomeMessage.vue";
 
 export default defineComponent({
   name: "HomeView",
   components: {
-    HelloWorld,
+    WelcomeMessage,
   },
 });
 </script>

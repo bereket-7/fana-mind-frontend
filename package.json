@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "axios": "^1.8.4",
     "fana-mind-frontend": "file:",
     "pinia": "^3.0.1",
     "vue": "^3.2.13",
@@ -16,6 +17,7 @@
     "vuetify": "^3.8.0-beta.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.9.36",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-eslint": "~5.0.0",

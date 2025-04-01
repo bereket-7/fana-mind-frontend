@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import "vuetify/styles"; 
 import { createVuetify } from "vuetify";
 import { aliases, mdi } from "vuetify/iconsets/mdi";
