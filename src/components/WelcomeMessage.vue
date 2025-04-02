@@ -1,13 +1,6 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <v-container>
-      <v-card class="pa-4">
-        <v-card-text>
-          Vuetify-based UI for Online Learning App using Vue.js + Django
-        </v-card-text>
-      </v-card>
-    </v-container>
   </div>
 </template>
 

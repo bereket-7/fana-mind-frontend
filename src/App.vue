@@ -1,5 +1,4 @@
 <template>
-  <FanaNavbar />
   <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
@@ -9,7 +8,6 @@
 </template>
 
 <script setup>
-import FanaNavbar from "@/components/Layout/FanaNavbar.vue";
 </script>
 
 <style>
