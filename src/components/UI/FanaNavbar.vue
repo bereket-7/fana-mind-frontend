@@ -36,11 +36,12 @@
               ></BFormInput>
             </div>
             
-            <!-- Login Button -->
-            <BButton size="md" variant="outline-light" class="ms-lg-3">Login</BButton>
-            <BButton size="md" variant="outline-light" class="ms-lg-3">Sign up</BButton>
+           
           </BNavbarNav>
         </BCollapse>
+         <!-- Login Button -->
+        <BButton size="sm" variant="outline-light" class="ms-sm-3">Login</BButton>
+        <BButton size="sm" variant="outline-light" class="ms-sm-3">Sign up</BButton>
       </BContainer>
     </BNavbar>
   </template>
@@ -73,22 +74,26 @@
     opacity: 0.8;
   }
 
-  /* Enable hover dropdown */
-.dropdown:hover .dropdown-menu {
-  display: block !important;
+
+/* Enable hover dropdown */
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* Remove any gap */
 }
 
-/* Dropdown styling */
+/* Dropdown menu styling */
 .dropdown-menu {
-  background-color: #000 !important;
-  border: 1px solid #333 !important;
+  background-color: #000;
+  border: 1px solid #333;
+  min-width: 10rem;
 }
 
 .dropdown-item {
   color: white !important;
+  padding: 0.5rem 1rem;
 }
 
 .dropdown-item:hover {
-  background-color: #3a3a3a !important;
+  background-color: #333;
 }
   </style>
