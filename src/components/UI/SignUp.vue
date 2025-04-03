@@ -11,164 +11,181 @@
               </div>
   
               <!-- Signup Form -->
-              <BForm @submit.prevent="handleSignup">
-                <!-- Name Input -->
-                <div class="mb-3">
-                  <label for="name" class="form-label">First Name</label>
-                  <BInputGroup>
-                    <BInputGroupText class="bg-light">
-                      <font-awesome-icon :icon="['fas', 'user']" />
-                    </BInputGroupText>
-                    <BFormInput
-                      id="name"
-                      v-model="form.name"
-                      type="text"
-                      placeholder="Enter your first name"
-                      required
-                    />
-                  </BInputGroup>
+                <BForm @submit.prevent="handleSignup">
+                <!-- Name Inputs -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <BInputGroup>
+                        <BInputGroupText class="bg-light">
+                        <font-awesome-icon :icon="['fas', 'user']" class="text-primary"/>
+                        </BInputGroupText>
+                        <BFormInput
+                        id="firstName"
+                        v-model="form.firstName"
+                        type="text"
+                        placeholder="Enter your first name"
+                        required
+                        />
+                    </BInputGroup>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <BInputGroup>
+                        <BInputGroupText class="bg-light">
+                        <font-awesome-icon :icon="['fas', 'user']" class="text-primary"/>
+                        </BInputGroupText>
+                        <BFormInput
+                        id="lastName"
+                        v-model="form.lastName"
+                        type="text"
+                        placeholder="Enter your last name"
+                        required
+                        />
+                    </BInputGroup>
+                    </div>
                 </div>
-                                <!-- Name Input -->
-                <div class="mb-3">
-                  <label for="name" class="form-label">Last Name</label>
-                  <BInputGroup>
-                    <BInputGroupText class="bg-light">
-                      <font-awesome-icon :icon="['fas', 'user']" />
-                    </BInputGroupText>
-                    <BFormInput
-                      id="name"
-                      v-model="form.name"
-                      type="text"
-                      placeholder="Enter your last name"
-                      required
-                    />
-                  </BInputGroup>
-                </div>
-  
+
                 <!-- Email Input -->
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <BInputGroup>
+                    <label for="email" class="form-label">Email Address</label>
+                    <BInputGroup>
                     <BInputGroupText class="bg-light">
-                      <font-awesome-icon :icon="['fas', 'envelope']" />
+                        <font-awesome-icon :icon="['fas', 'envelope']" class="text-danger"/>
                     </BInputGroupText>
                     <BFormInput
-                      id="email"
-                      v-model="form.email"
-                      type="email"
-                      placeholder="Enter your email"
-                      required
+                        id="email"
+                        v-model="form.email"
+                        type="email"
+                        placeholder="Enter your email"
+                        required
                     />
-                  </BInputGroup>
+                    </BInputGroup>
                 </div>
-  
+
+                <!-- Phone Input -->
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <BInputGroup>
+                    <BInputGroupText class="bg-light">
+                        <font-awesome-icon :icon="['fas', 'phone']" class="text-success"/>
+                    </BInputGroupText>
+                    <BFormInput
+                        id="phone"
+                        v-model="form.phone"
+                        type="tel"
+                        placeholder="Enter your phone number"
+                        required
+                    />
+                    </BInputGroup>
+                </div>
+
                 <!-- Password Input -->
                 <div class="mb-3">
-                  <label for="password" class="form-label">Password</label>
-                  <BInputGroup>
+                    <label for="password" class="form-label">Password</label>
+                    <BInputGroup>
                     <BInputGroupText class="bg-light">
-                      <font-awesome-icon :icon="['fas', 'lock']" />
+                        <font-awesome-icon :icon="['fas', 'lock']" />
                     </BInputGroupText>
                     <BFormInput
-                      id="password"
-                      v-model="form.password"
-                      :type="showPassword ? 'text' : 'password'"
-                      placeholder="Create a password"
-                      required
+                        id="password"
+                        v-model="form.password"
+                        :type="showPassword ? 'text' : 'password'"
+                        placeholder="Create a password"
+                        required
                     />
                     <BInputGroupText 
-                      @click="showPassword = !showPassword" 
-                      class="cursor-pointer bg-light"
+                        @click="showPassword = !showPassword" 
+                        class="cursor-pointer bg-light"
                     >
-                      <font-awesome-icon 
+                        <font-awesome-icon 
                         :icon="['fas', showPassword ? 'eye-slash' : 'eye']" 
                         class="text-muted"
-                      />
+                        />
                     </BInputGroupText>
-                  </BInputGroup>
-                  <small class="text-muted">At least 8 characters with 1 number</small>
+                    </BInputGroup>
+                    <small class="text-muted">At least 8 characters with 1 number</small>
                 </div>
-  
+
                 <!-- Confirm Password -->
                 <div class="mb-4">
-                  <label for="confirmPassword" class="form-label">Confirm Password</label>
-                  <BInputGroup>
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <BInputGroup>
                     <BInputGroupText class="bg-light">
-                      <font-awesome-icon :icon="['fas', 'lock']" />
+                        <font-awesome-icon :icon="['fas', 'lock']" />
                     </BInputGroupText>
                     <BFormInput
-                      id="confirmPassword"
-                      v-model="form.confirmPassword"
-                      type="password"
-                      placeholder="Confirm your password"
-                      required
+                        id="confirmPassword"
+                        v-model="form.confirmPassword"
+                        type="password"
+                        placeholder="Confirm your password"
+                        required
                     />
-                  </BInputGroup>
+                    </BInputGroup>
                 </div>
-  
+
                 <!-- Terms Checkbox -->
                 <BFormCheckbox
-                  id="terms"
-                  v-model="form.agreeTerms"
-                  name="terms"
-                  value="true"
-                  unchecked-value="false"
-                  class="mb-4 small"
+                    id="terms"
+                    v-model="form.agreeTerms"
+                    name="terms"
+                    value="true"
+                    unchecked-value="false"
+                    class="mb-4 small"
                 >
-                  I agree to the <BLink href="#" class="text-decoration-none">Terms</BLink> and <BLink href="#" class="text-decoration-none">Privacy Policy</BLink>
+                    I agree to the <BLink href="#" class="text-decoration-none">Terms</BLink> and <BLink href="#" class="text-decoration-none">Privacy Policy</BLink>
                 </BFormCheckbox>
-  
+
                 <!-- Submit Button -->
                 <div class="d-grid mb-4">
-                  <BButton 
+                    <BButton 
                     type="submit" 
                     variant="success" 
                     pill
                     class="py-2 signup-btn fw-bold"
                     :disabled="loading"
-                  >
+                    >
                     <template v-if="!loading">
-                      <font-awesome-icon :icon="['fas', 'user-plus']" class="me-2" />
-                      Create Account
+                        <font-awesome-icon :icon="['fas', 'user-plus']" class="me-2" />
+                        Sign Up
                     </template>
                     <template v-else>
-                      <BSpinner small type="grow" class="me-2" />
-                      Registering...
+                        <BSpinner small type="grow" class="me-2" />
+                        Registering...
                     </template>
-                  </BButton>
+                    </BButton>
                 </div>
-  
-                <!-- Divider -->
+
+                <!-- Divider and Social Login -->
                 <div class="d-flex align-items-center mb-4">
-                  <div class="divider-line"></div>
-                  <div class="px-3 text-dark font-bold">OR</div>
-                  <div class="divider-line"></div>
+                    <div class="divider-line"></div>
+                    <div class="px-3 text-dark font-bold">OR</div>
+                    <div class="divider-line"></div>
                 </div>
-  
-                <!-- Social Signup -->
+
                 <div class="text-center">
-                  <p class="small mb-3 text-muted">Sign up with social account</p>
-                  <div class="d-flex justify-content-center gap-3">
+                    <p class="small mb-3 text-muted">Sign up with social account</p>
+                    <div class="d-flex justify-content-center gap-3">
                     <BButton variant="outline-light" pill class="social-btn">
-                      <font-awesome-icon :icon="['fab', 'google']" class="text-danger" />
+                        <font-awesome-icon :icon="['fab', 'google']" class="text-danger" />
                     </BButton>
                     <BButton variant="outline-light" pill class="social-btn">
-                      <font-awesome-icon :icon="['fab', 'facebook-f']" class="text-primary" />
+                        <font-awesome-icon :icon="['fab', 'facebook-f']" class="text-primary" />
                     </BButton>
                     <BButton variant="outline-light" pill class="social-btn">
-                      <font-awesome-icon :icon="['fab', 'twitter']" class="text-dark" />
+                        <font-awesome-icon :icon="['fab', 'twitter']" class="text-dark" />
                     </BButton>
-                  </div>
+                    </div>
                 </div>
-  
+
                 <!-- Login Link -->
                 <div class="text-center mt-4">
-                  <p class="small mb-0 text-dark">
+                    <p class="small mb-0 text-dark">
                     Already have an account? 
                     <BLink to="/login" class="text-decoration-none fw-bold text-success">Log in</BLink>
-                  </p>
+                    </p>
                 </div>
-              </BForm>
+                </BForm>
             </BCardBody>
           </BCard>
         </BCol>
@@ -225,7 +242,7 @@
   
   .signup-btn {
     transition: all 0.3s ease;
-    background-color: #4e73df;
+    background-color: #099340;
     border: none;
   }
   
