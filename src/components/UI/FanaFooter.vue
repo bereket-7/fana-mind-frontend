@@ -47,14 +47,14 @@
           <li class="mb-2">
             <font-awesome-icon 
               :icon="['fas', 'map-marker-alt']" 
-              class="me-2 contact-icon"
+              class="me-2 contact-icon text-danger"
             /> 
             Addis Ababa, Ethiopia
           </li>
           <li class="mb-2">
             <font-awesome-icon 
               :icon="['fas', 'envelope']" 
-              class="me-2 contact-icon"
+              class="me-2 contact-icon text-warning"
             /> 
             info@fanamind.com
           </li>
