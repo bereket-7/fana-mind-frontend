@@ -1,5 +1,5 @@
 <template>
-    <BNavbar toggleable="lg" variant="success">
+    <BNavbar toggleable="lg" variant="success" >
 
       <BContainer class="d-flex flex-wrap justify-content-center">
         <!-- Brand -->
@@ -44,8 +44,8 @@
         <BButton size="md" variant="outline-light" class="me-3 custom-btn">Login</BButton>
         <BButton size="md" variant="light" class="custom-btn">Sign Up</BButton>
     </div>
-
-      </BContainer>
+    <LogOut />
+    </BContainer>
     </BNavbar>
   </template>
   
@@ -63,6 +63,7 @@
     BFormInput,
     BButton
   } from 'bootstrap-vue-next'
+import LogOut from './LogOut.vue';
   </script>
   
   <style scoped>
@@ -110,6 +111,7 @@
   display: flex;
   align-items: center;
   height: 100%;
+  padding: 0.5rem;
 }
 
 .custom-btn {
