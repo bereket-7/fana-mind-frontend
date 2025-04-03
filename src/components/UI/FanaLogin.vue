@@ -75,7 +75,7 @@
                     href="#" 
                     class="text-decoration-none small text-primary"
                   >
-                    Forgot password?
+                    Forgot password ?
                   </BLink>
                 </div>
   
@@ -112,13 +112,13 @@
                 <div class="text-center">
                   <p class="small mb-3 text-muted">Continue with social account</p>
                   <div class="d-flex justify-content-center gap-3">
-                    <BButton variant="outline-primary" pill class="social-btn">
+                    <BButton variant="outline-light" pill class="social-btn">
                       <font-awesome-icon :icon="['fab', 'google']" class="text-danger" />
                     </BButton>
-                    <BButton variant="outline-primary" pill class="social-btn">
+                    <BButton variant="outline-light" pill class="social-btn">
                       <font-awesome-icon :icon="['fab', 'facebook-f']" class="text-primary" />
                     </BButton>
-                    <BButton variant="outline-primary" pill class="social-btn">
+                    <BButton variant="outline-light" pill class="social-btn">
                       <font-awesome-icon :icon="['fab', 'twitter']" class="text-dark" />
                     </BButton>
                   </div>
@@ -126,7 +126,7 @@
   
               <!-- Sign Up Link -->
               <div class="text-center mt-4">
-                <p class="small mb-0 text-muted">
+                <p class="small mb-0 text-dark">
                   Don't have an account? 
                   <BLink to="/register" class="text-decoration-none fw-bold text-success">Sign up</BLink>
                 </p>
@@ -218,7 +218,7 @@
   
   .social-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   }
   
   /* divider-line style */
