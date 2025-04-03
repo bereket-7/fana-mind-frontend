@@ -5,7 +5,7 @@
           <BCard no-body class="login-card shadow-lg">
             <BCardBody class="p-5">
               <!-- Header with Logo -->
-              <div class="text-center mb-4">
+              <div class="text-center mb-2">
                 <font-awesome-icon 
                   :icon="['fas', 'user-lock']" 
                   class="login-icon mb-3"
@@ -17,8 +17,8 @@
               <!-- Login Form -->
               <BForm @submit.prevent="handleLogin">
                 <!-- Email Input -->
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email Address</label>
+                <div class="mb-2">
+                  <label for="email" class="form-label">Email</label>
                   <BInputGroup>
                     <BInputGroupText>
                       <font-awesome-icon :icon="['fas', 'envelope']" />
@@ -70,7 +70,7 @@
                   </BFormCheckbox>
                   <BButton 
                     type="submit" 
-                    variant="primary" 
+                    variant="success" 
                     pill
                     class="px-4 login-btn"
                     :disabled="loading"
@@ -161,7 +161,7 @@
   }
   
   .login-icon {
-    color: #4e73df;
+    color: #098c2e;
     font-size: 2.5rem;
   }
   
@@ -187,7 +187,7 @@
   
   .login-btn {
     transition: all 0.3s ease;
-    background-color: #13cd3b;
+    background-color: #0ba42c;
     border: none;
   }
   
