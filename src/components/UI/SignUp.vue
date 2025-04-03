@@ -18,7 +18,7 @@
               <BForm @submit.prevent="handleSignup">
                 <!-- Name Input -->
                 <div class="mb-3">
-                  <label for="name" class="form-label">Full Name</label>
+                  <label for="name" class="form-label">First Name</label>
                   <BInputGroup>
                     <BInputGroupText class="bg-light">
                       <font-awesome-icon :icon="['fas', 'user']" />
@@ -27,7 +27,23 @@
                       id="name"
                       v-model="form.name"
                       type="text"
-                      placeholder="Enter your full name"
+                      placeholder="Enter your first name"
+                      required
+                    />
+                  </BInputGroup>
+                </div>
+                                <!-- Name Input -->
+                <div class="mb-3">
+                  <label for="name" class="form-label">Last Name</label>
+                  <BInputGroup>
+                    <BInputGroupText class="bg-light">
+                      <font-awesome-icon :icon="['fas', 'user']" />
+                    </BInputGroupText>
+                    <BFormInput
+                      id="name"
+                      v-model="form.name"
+                      type="text"
+                      placeholder="Enter your last name"
                       required
                     />
                   </BInputGroup>
@@ -35,7 +51,7 @@
   
                 <!-- Email Input -->
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email Address</label>
+                  <label for="email" class="form-label">Email</label>
                   <BInputGroup>
                     <BInputGroupText class="bg-light">
                       <font-awesome-icon :icon="['fas', 'envelope']" />
