@@ -1,11 +1,11 @@
 <template>
-    <BContainer class="login-container">
-      <BRow class="justify-content-center align-items-center">
-        <BCol md="8" lg="6" xl="5">
-          <BCard no-body class="login-card shadow-lg">
-            <BCardBody class="p-5">
+    <BContainer class="login-container d-flex align-items-center justify-content-center min-vh-100">
+      <BRow class="justify-content-center w-100">
+        <BCol md="8" lg="6" xl="4">
+          <BCard class="login-card shadow-lg">
+            <BCardBody class="p-4 p-md-5">
               <!-- Header with Logo -->
-              <div class="text-center mb-2">
+              <div class="text-center mb-4">
                 <font-awesome-icon 
                   :icon="['fas', 'user-lock']" 
                   class="login-icon mb-3"
@@ -17,11 +17,11 @@
               <!-- Login Form -->
               <BForm @submit.prevent="handleLogin">
                 <!-- Email Input -->
-                <div class="mb-2">
-                  <label for="email" class="form-label">Email</label>
-                  <BInputGroup>
-                    <BInputGroupText>
-                      <font-awesome-icon :icon="['fas', 'envelope']" />
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <BInputGroup class="mb-2">
+                    <BInputGroupText class="bg-light">
+                      <font-awesome-icon :icon="['fas', 'envelope']" class="text-muted" />
                     </BInputGroupText>
                     <BFormInput
                       id="email"
@@ -29,16 +29,17 @@
                       type="email"
                       placeholder="Enter your email"
                       required
+                      class="py-2"
                     />
                   </BInputGroup>
                 </div>
   
                 <!-- Password Input -->
-                <div class="mb-4">
+                <div class="mb-3">
                   <label for="password" class="form-label">Password</label>
-                  <BInputGroup>
-                    <BInputGroupText>
-                      <font-awesome-icon :icon="['fas', 'lock']" />
+                  <BInputGroup class="mb-2">
+                    <BInputGroupText class="bg-light">
+                      <font-awesome-icon :icon="['fas', 'lock']" class="text-muted" />
                     </BInputGroupText>
                     <BFormInput
                       id="password"
@@ -46,17 +47,21 @@
                       :type="showPassword ? 'text' : 'password'"
                       placeholder="Enter your password"
                       required
+                      class="py-2"
                     />
-                    <BInputGroupText @click="showPassword = !showPassword" class="cursor-pointer">
-                      <font-awesome-icon :icon="['fas', showPassword ? 'eye-slash' : 'eye']" />
+                    <BInputGroupText 
+                      @click="showPassword = !showPassword" 
+                      class="cursor-pointer bg-light"
+                    >
+                      <font-awesome-icon 
+                        :icon="['fas', showPassword ? 'eye-slash' : 'eye']" 
+                        class="text-muted"
+                      />
                     </BInputGroupText>
                   </BInputGroup>
-                  <div class="text-end mt-2">
-                    <BLink href="#" class="text-decoration-none small">Forgot password?</BLink>
-                  </div>
                 </div>
   
-                <!-- Remember Me & Submit -->
+                <!-- Remember Me & Forgot Password -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
                   <BFormCheckbox
                     id="remember"
@@ -64,37 +69,49 @@
                     name="remember"
                     value="true"
                     unchecked-value="false"
-                    class="small"
+                    class="small text-muted"
                   >
                     Remember me
                   </BFormCheckbox>
-                  <BButton 
+                  <BLink 
+                    href="#" 
+                    class="text-decoration-none small text-primary"
+                  >
+                    Forgot password?
+                  </BLink>
+                </div>
+  
+                <!-- Submit Button -->
+<!-- Replace the button container div -->
+                <div class="text-center mb-4">
+                <BButton 
                     type="submit" 
                     variant="success" 
                     pill
-                    class="px-4 login-btn"
+                    class="px-5 login-btn fw-bold"
                     :disabled="loading"
-                  >
+                >
                     <template v-if="!loading">
-                      Login
+                    <font-awesome-icon :icon="['fas', 'sign-in-alt']" class="me-2" />
+                    Login
                     </template>
                     <template v-else>
-                      <BSpinner small type="grow" />
-                      Authenticating...
+                    <BSpinner small type="grow" class="me-2" />
+                    Authenticating...
                     </template>
-                  </BButton>
+                </BButton>
                 </div>
   
                 <!-- Divider -->
                 <div class="divider d-flex align-items-center mb-4">
                   <div class="divider-line"></div>
-                  <div class="divider-text px-3 small">OR</div>
+                  <div class="divider-text px-3 small text-muted">OR</div>
                   <div class="divider-line"></div>
                 </div>
   
                 <!-- Social Login -->
                 <div class="text-center">
-                  <p class="small mb-3">Continue with social account</p>
+                  <p class="small mb-3 text-muted">Continue with social account</p>
                   <div class="d-flex justify-content-center gap-3">
                     <BButton variant="outline-primary" pill class="social-btn">
                       <font-awesome-icon :icon="['fab', 'google']" />
@@ -111,9 +128,9 @@
   
               <!-- Sign Up Link -->
               <div class="text-center mt-4">
-                <p class="small mb-0">
+                <p class="small mb-0 text-muted">
                   Don't have an account? 
-                  <BLink to="/register" class="text-decoration-none fw-bold">Sign up</BLink>
+                  <BLink to="/register" class="text-decoration-none fw-bold text-success">Sign up</BLink>
                 </p>
               </div>
             </BCardBody>
@@ -150,50 +167,50 @@
   <style scoped>
   .login-container {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
   }
   
   .login-card {
     border: none;
     border-radius: 1rem;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: white;
   }
   
   .login-icon {
-    color: #098c2e;
+    color: #28a745;
     font-size: 2.5rem;
   }
   
   .form-label {
     font-weight: 500;
-    color: #5a5c69;
+    color: #495057;
   }
   
   .input-group-text {
-    background-color: #f8f9fc;
-    border-right: none;
+    background-color: #f8f9fa !important;
+    border-color: #dee2e6 !important;
   }
   
   .form-control {
-    border-left: none;
-    background-color: #f8f9fc;
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
   }
   
   .form-control:focus {
-    box-shadow: none;
-    border-color: #d1d3e2;
+    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
+    border-color: #28a745;
   }
   
   .login-btn {
     transition: all 0.3s ease;
-    background-color: #0ba42c;
+    background-color: #28a745;
     border: none;
   }
   
   .login-btn:hover {
+    background-color: #218838;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(78, 115, 223, 0.3);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
   }
   
   .social-btn {
@@ -213,11 +230,7 @@
   .divider-line {
     flex: 1;
     height: 1px;
-    background-color: #e3e6f0;
-  }
-  
-  .divider-text {
-    color: #b7b9cc;
+    background-color: #e9ecef;
   }
   
   .cursor-pointer {
@@ -226,8 +239,12 @@
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
+    .login-container {
+      padding: 1rem;
+    }
+    
     .login-card {
-      border-radius: 0;
+      border-radius: 0.5rem;
     }
   }
   </style>
