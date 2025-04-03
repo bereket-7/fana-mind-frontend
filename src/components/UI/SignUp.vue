@@ -6,10 +6,6 @@
             <BCardBody>
               <!-- Header with Logo -->
               <div class="text-center mb-4">
-                <font-awesome-icon 
-                  :icon="['fas', 'user-plus']" 
-                  class="signup-icon mb-3"
-                />
                 <h3 class="fw-bold mb-1">Create Your Account</h3>
                 <p class="text-muted">Join us today! It only takes a minute</p>
               </div>
@@ -220,11 +216,6 @@
     border: none;
     border-radius: 1rem;
     background-color: white;
-  }
-  
-  .signup-icon {
-    color: #4e73df;
-    font-size: 2.5rem;
   }
   
   .form-label {
