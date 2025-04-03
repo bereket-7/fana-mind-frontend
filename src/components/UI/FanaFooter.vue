@@ -31,7 +31,7 @@
 
       <!-- Quick Links -->
       <BCol md="2" class="mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-4">Quick Links</h5>
+        <h5 class="text-uppercase mb-4" style="color: #20c997;">Quick Links</h5>
         <ul class="list-unstyled">
           <li class="mb-2"><a href="#" class="text-white text-decoration-none hover-accent">Home</a></li>
           <li class="mb-2"><a href="#" class="text-white text-decoration-none hover-accent">About</a></li>
@@ -42,7 +42,7 @@
 
       <!-- Contact Info -->
       <BCol md="3" class="mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-4">Contact Us</h5>
+        <h5 class="text-uppercase mb-4" style="color: #20c997;">Contact Us</h5>
         <ul class="list-unstyled contact-info">
           <li class="mb-2">
             <font-awesome-icon 
@@ -70,7 +70,7 @@
 
       <!-- Newsletter -->
       <BCol md="3">
-        <h5 class="text-uppercase mb-4">Newsletter</h5>
+        <h5 class="text-uppercase mb-4" style="color: #20c997;">Newsletter</h5>
         <p>Subscribe to our newsletter for updates.</p>
         <BForm class="mt-3">
           <BInputGroup>
