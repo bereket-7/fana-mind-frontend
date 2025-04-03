@@ -1,9 +1,9 @@
 <template>
-    <BContainer class="login-container d-flex align-items-center justify-content-center min-vh-100">
-      <BRow class="justify-content-center w-100">
+    <BContainer class="login-container d-flex align-items-center justify-content-center">
+      <BRow class="justify-content-center">
         <BCol md="8" lg="6" xl="4">
           <BCard class="login-card shadow-lg">
-            <BCardBody class="p-4 p-md-5">
+            <BCardBody>
               <!-- Header with Logo -->
               <div class="text-center mb-4">
                 <font-awesome-icon 
@@ -14,51 +14,52 @@
                 <p class="text-muted">Please enter your credentials</p>
               </div>
   
+                          <!-- Login Form -->
+
               <!-- Login Form -->
-              <BForm @submit.prevent="handleLogin">
+              <BForm @submit.prevent="handleLogin" class="w-600">
                 <!-- Email Input -->
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email Address</label>
-                  <BInputGroup class="mb-2">
+                <div class="mb-2">
+                <label for="email" class="form-label">Email Address</label>
+                <BInputGroup>
                     <BInputGroupText class="bg-light">
-                      <font-awesome-icon :icon="['fas', 'envelope']" class="text-muted" />
+                    <font-awesome-icon :icon="['fas', 'envelope']" />
                     </BInputGroupText>
                     <BFormInput
-                      id="email"
-                      v-model="form.email"
-                      type="email"
-                      placeholder="Enter your email"
-                      required
-                      class="py-2"
+                    id="email"
+                    v-model="form.email"
+                    type="email"
+                    placeholder="Enter your email"
+                    required
                     />
-                  </BInputGroup>
+                </BInputGroup>
                 </div>
   
                 <!-- Password Input -->
                 <div class="mb-3">
-                  <label for="password" class="form-label">Password</label>
-                  <BInputGroup class="mb-2">
+                <label for="password" class="form-label">Password</label>
+                <BInputGroup>
                     <BInputGroupText class="bg-light">
-                      <font-awesome-icon :icon="['fas', 'lock']" class="text-muted" />
+                    <font-awesome-icon :icon="['fas', 'lock']" class="text-muted" />
                     </BInputGroupText>
                     <BFormInput
-                      id="password"
-                      v-model="form.password"
-                      :type="showPassword ? 'text' : 'password'"
-                      placeholder="Enter your password"
-                      required
-                      class="py-2"
+                    id="password"
+                    v-model="form.password"
+                    :type="showPassword ? 'text' : 'password'"
+                    placeholder="Enter your password"
+                    required
+                    class="border-start-0 py-2"
                     />
                     <BInputGroupText 
-                      @click="showPassword = !showPassword" 
-                      class="cursor-pointer bg-light"
+                    @click="showPassword = !showPassword" 
+                    class="cursor-pointer bg-light border-start-0"
                     >
-                      <font-awesome-icon 
+                    <font-awesome-icon 
                         :icon="['fas', showPassword ? 'eye-slash' : 'eye']" 
                         class="text-muted"
-                      />
+                    />
                     </BInputGroupText>
-                  </BInputGroup>
+                </BInputGroup>
                 </div>
   
                 <!-- Remember Me & Forgot Password -->
@@ -82,7 +83,6 @@
                 </div>
   
                 <!-- Submit Button -->
-<!-- Replace the button container div -->
                 <div class="text-center mb-4">
                 <BButton 
                     type="submit" 
@@ -101,7 +101,9 @@
                     </template>
                 </BButton>
                 </div>
-  
+
+              </BForm>
+
                 <!-- Divider -->
                 <div class="divider d-flex align-items-center mb-4">
                   <div class="divider-line"></div>
@@ -124,7 +126,6 @@
                     </BButton>
                   </div>
                 </div>
-              </BForm>
   
               <!-- Sign Up Link -->
               <div class="text-center mt-4">
@@ -158,7 +159,7 @@
     loading.value = true;
     // Simulate API call
     setTimeout(() => {
-      router.push('/dashboard');
+      router.push('/dashboard'); // redirect to dashboard after login
       loading.value = false;
     }, 1500);
   };
@@ -166,7 +167,7 @@
   
   <style scoped>
   .login-container {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
     padding: 2rem;
   }
   
@@ -177,25 +178,26 @@
   }
   
   .login-icon {
-    color: #28a745;
+    color: #099128;
     font-size: 2.5rem;
   }
   
   .form-label {
     font-weight: 500;
-    color: #495057;
+    color: #393c40;
   }
-  
-  .input-group-text {
-    background-color: #f8f9fa !important;
-    border-color: #dee2e6 !important;
-  }
-  
-  .form-control {
-    background-color: #f8f9fa;
-    border-color: #dee2e6;
-  }
-  
+
+.form-control {
+  display: block !important; /* Forces input to show */
+  width: 100% !important;
+  background-color: #fff !important;
+  border: 1px solid #111111 !important;
+}
+
+.form-control:not(:first-child) {
+  border-left: none !important;
+}
+
   .form-control:focus {
     box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
     border-color: #28a745;
@@ -203,14 +205,17 @@
   
   .login-btn {
     transition: all 0.3s ease;
-    background-color: #28a745;
+    background-color: #099128;
     border: none;
   }
   
   .login-btn:hover {
-    background-color: #218838;
+    background-color: #f5fcf6;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    border:#111111;
+    border-radius: 2px;
+    color: #038f24;
   }
   
   .social-btn {
