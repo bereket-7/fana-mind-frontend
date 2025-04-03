@@ -1,32 +1,39 @@
 <template>
-    <BNavbar toggleable="lg" type="dark" variant="primary">
-      <BContainer>
-        <!-- Brand/Logo -->
-        <BNavbarBrand href="#" variant="">My Vue App</BNavbarBrand>
-  
-        <!-- Mobile Toggle Button -->
-        <BNavbarToggle target="nav-collapse"></BNavbarToggle>
+    <BNavbar toggleable="lg" variant="success">
+      <BContainer class="d-flex flex-wrap justify-content-center">
+        <!-- Brand -->
+        <BNavbarBrand href="#" class="text-white me-lg-5">My Vue App</BNavbarBrand>
+        
+        <!-- Toggle -->
+        <BNavbarToggle target="nav-collapse" class="border-0"></BNavbarToggle>
   
         <!-- Collapsible Content -->
-        <BCollapse id="nav-collapse" is-nav>
-          <!-- Left Aligned Items -->
-          <BNavbarNav>
-            <BNavItem href="#" active>Home</BNavItem>
-            <BNavItem href="#">About</BNavItem>
-            <BDropdown text="Dropdown" variant="link" no-caret>
+        <BCollapse id="nav-collapse" is-nav class="flex-grow-1">
+          <BNavbarNav class="w-100 justify-content-center align-items-center">
+            <!-- Nav Items -->
+            <BNavItem href="#" active class="px-3 py-2" variant="light">Home</BNavItem>
+            <BNavItem href="#" class="px-3 py-2" variant="light">About</BNavItem>
+            
+            <!-- Dropdown -->
+            <BDropdown text="Menu" variant="link" class="px-3 text-decoration-none" no-caret>
+              <template #button-content>
+                <span class="text-white">Dropdown</span>
+              </template>
               <BDropdownItem href="#">Action 1</BDropdownItem>
               <BDropdownItem href="#">Action 2</BDropdownItem>
             </BDropdown>
-          </BNavbarNav>
   
-          <!-- Right Aligned Items -->
-          <BNavbarNav class="ms-auto">
-            <BFormInput
-              size="sm"
-              class="me-2 my-2"
-              placeholder="Search"
-            ></BFormInput>
-            <BButton size="sm" variant="light" class="my-2">Login</BButton>
+            <!-- Search -->
+            <div class="px-3">
+              <BFormInput
+                size="sm"
+                class="bg-dark text-white border-secondary"
+                placeholder="Search"
+              ></BFormInput>
+            </div>
+            
+            <!-- Login Button -->
+            <BButton size="sm" variant="outline-light" class="ms-lg-3">Login</BButton>
           </BNavbarNav>
         </BCollapse>
       </BContainer>
@@ -48,3 +55,16 @@
     BButton
   } from 'bootstrap-vue-next'
   </script>
+  
+  <style scoped>
+  .bg-black {
+    background-color: #000 !important;
+  }
+  .nav-link {
+    color: white !important;
+    padding: 0.5rem 1rem !important;
+  }
+  .nav-link:hover {
+    opacity: 0.8;
+  }
+  </style>
