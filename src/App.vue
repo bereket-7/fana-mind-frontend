@@ -1,5 +1,8 @@
 <template>
   <FanaNavbar />
+
+  <FanaLogin />
+
   <FanaFooter />
    <!-- <nav>
     <router-link to="/">Home</router-link> |
@@ -11,6 +14,7 @@
 
 <script setup>
 import FanaFooter from './components/UI/FanaFooter.vue';
+import FanaLogin from './components/UI/FanaLogin.vue';
 import FanaNavbar from './components/UI/FanaNavbar.vue';
 
 </script>
