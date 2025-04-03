@@ -3,7 +3,7 @@
 
       <BContainer class="d-flex flex-wrap justify-content-center">
         <!-- Brand -->
-        <BNavbarBrand href="#" class="text-white me-lg-5">My Vue App</BNavbarBrand>
+        <BNavbarBrand href="#" class="text-white me-lg-5">FANA-MIND</BNavbarBrand>
         
         <!-- Toggle -->
         <BNavbarToggle target="nav-collapse" class="border-0"></BNavbarToggle>
@@ -15,7 +15,7 @@
             <BNavItem href="#" active class="px-3 py-2" variant="light">Home</BNavItem>
             <BNavItem href="#" class="px-3 py-2" variant="light">About</BNavItem>
             <BNavItem href="#" class="px-3 py-2" variant="light">Contact</BNavItem>
-            
+        
 
             <!-- Dropdown -->
         <BDropdown text="Category" variant="link" class="px-3" no-caret>
@@ -39,9 +39,12 @@
            
           </BNavbarNav>
         </BCollapse>
-         <!-- Login Button -->
-        <BButton size="sm" variant="outline-light" class="ms-sm-3">Login</BButton>
-        <BButton size="sm" variant="outline-light" class="ms-sm-3">Sign up</BButton>
+    <!-- Buttons -->
+    <div class="btn-container ms-auto">
+        <BButton size="md" variant="outline-light" class="me-3 custom-btn">Login</BButton>
+        <BButton size="md" variant="light" class="custom-btn">Sign Up</BButton>
+    </div>
+
       </BContainer>
     </BNavbar>
   </template>
@@ -66,6 +69,11 @@
   .bg-black {
     background-color: #000 !important;
   }
+  /* Ensure navbar has consistent height */
+.navbar {
+  min-height: 56px; /* Bootstrap's default navbar height */
+} 
+
   .nav-link {
     color: white !important;
     padding: 0.5rem 1rem !important;
@@ -96,4 +104,18 @@
 .dropdown-item:hover {
   background-color: #333;
 }
-  </style>
+
+/* button styling  */
+.btn-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.custom-btn {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
