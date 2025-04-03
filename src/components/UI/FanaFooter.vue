@@ -3,8 +3,8 @@
     <BRow>
       <!-- Company Info -->
       <BCol md="4" class="mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-4" style="color: #20c997;">My Vue App</h5>
-        <p>Building modern web applications with Vue 3 and Bootstrap 5.</p>
+        <h5 class="text-uppercase mb-4" style="color: #20c997;">FANA-MIND</h5>
+        <p>Fana-Mind Online Learning Platform.</p>
         <div class="social-icons mt-4">
           <font-awesome-icon 
             :icon="['fab', 'facebook-f']" 
@@ -49,21 +49,21 @@
               :icon="['fas', 'map-marker-alt']" 
               class="me-2 contact-icon"
             /> 
-            123 Main St, City
+            Addis Ababa, Ethiopia
           </li>
           <li class="mb-2">
             <font-awesome-icon 
               :icon="['fas', 'envelope']" 
               class="me-2 contact-icon"
             /> 
-            info@myvueapp.com
+            info@fanamind.com
           </li>
           <li class="mb-2">
             <font-awesome-icon 
               :icon="['fas', 'phone']" 
               class="me-2 contact-icon"
             /> 
-            +1 (555) 123-4567
+            +251 943 578 915
           </li>
         </ul>
       </BCol>
@@ -96,7 +96,7 @@
     <!-- Copyright -->
     <BRow class="mt-4 pt-3 border-top border-secondary">
       <BCol class="text-center">
-        <p class="mb-0 text-muted">&copy; {{ new Date().getFullYear() }} My Vue App. All rights reserved.</p>
+        <p class="mb-0 text-light">&copy; {{ new Date().getFullYear() }} Fana Mind. All rights reserved.</p>
       </BCol>
     </BRow>
   </BContainer>
