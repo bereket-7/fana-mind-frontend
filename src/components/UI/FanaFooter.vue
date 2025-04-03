@@ -7,10 +7,10 @@
           <p>Building modern web applications with Vue 3 and Bootstrap 5.</p>
           <div class="social-icons mt-4">
             <BIcon icon="facebook" class="me-3" font-scale="1.5"></BIcon>
-            <BIcon icon="twitter" class="me-3" font-scale="1.5"></BIcon>
+            <BIcon icon="twitter-x" class="me-3" font-scale="1.5"></BIcon> <!-- Changed from twitter -->
             <BIcon icon="instagram" class="me-3" font-scale="1.5"></BIcon>
             <BIcon icon="linkedin" font-scale="1.5"></BIcon>
-          </div>
+        </div>
         </BCol>
   
         <!-- Quick Links -->
@@ -29,13 +29,13 @@
           <h5 class="text-uppercase mb-4">Contact Us</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <BIcon icon="geo-alt" class="me-2"></BIcon> 123 Main St, City
+              <BIcon icon="geo-alt-fill" class="me-2"></BIcon> 123 Main St, City
             </li>
             <li class="mb-2">
-              <BIcon icon="envelope" class="me-2"></BIcon> info@myvueapp.com
+              <BIcon icon="envelope-fill" class="me-2"></BIcon> info@myvueapp.com
             </li>
             <li class="mb-2">
-              <BIcon icon="telephone" class="me-2"></BIcon> +1 (555) 123-4567
+              <BIcon icon="telephone-fill" class="me-2"></BIcon> +1 (555) 123-4567
             </li>
           </ul>
         </BCol>

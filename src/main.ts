@@ -3,8 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 import { createPinia } from "pinia";
 import {createBootstrap} from "bootstrap-vue-next";
-import "bootstrap/dist/css/bootstrap.min.css" // Bootstrap CSS
-import "bootstrap-vue-next/dist/bootstrap-vue-next.css" // BootstrapVue CSS
+//Bootstrap import
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-vue-next/dist/bootstrap-vue-next.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const app = createApp(App);
 
