@@ -1,7 +1,7 @@
 <template>
     <BContainer class="login-container d-flex align-items-center justify-content-center">
       <BRow class="justify-content-center">
-        <BCol md="8" lg="6" xl="4">
+        <BCol md="10" lg="12" xl="16">
           <BCard class="login-card shadow-md">
             <BCardBody>
               <!-- Header with Logo -->
@@ -13,15 +13,12 @@
                 <h3 class="fw-bold mb-1">Welcome Back</h3>
                 <p class="text-muted">Please enter your credentials</p>
               </div>
-  
-                          <!-- Login Form -->
-
               <!-- Login Form -->
               <BForm @submit.prevent="handleLogin">
                 <!-- Email Input -->
                 <div class="mb-2">
                 <label for="email" class="form-label">Email Address</label>
-                <BInputGroup>
+                 <BInputGroup>
                     <BInputGroupText class="bg-light">
                     <font-awesome-icon :icon="['fas', 'envelope']" />
                     </BInputGroupText>
@@ -32,7 +29,7 @@
                     placeholder="Enter your email"
                     required
                     />
-                </BInputGroup>
+                </BInputGroup> 
                 </div>
   
                 <!-- Password Input -->
@@ -144,6 +141,10 @@
   <script setup>
   import { ref } from 'vue';
   import { useRouter } from 'vue-router';
+  import {
+  BContainer, BRow, BCol, BCard,BCardBody,BLink,BForm, BFormInput,BFormCheckbox,
+  BInputGroup,BInputGroupText, BButton
+} from 'bootstrap-vue-next'
   
   const router = useRouter();
   const showPassword = ref(false);
@@ -168,7 +169,7 @@
   <style scoped>
   .login-container {
     /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
-    padding: 2rem;
+    padding: 1rem;
   }
   
   .login-card {
@@ -226,6 +227,11 @@
     height: 1px;
     background-color: #858484;
   }
+
+  input {
+    display: block !important;
+}
+
   
   .cursor-pointer {
     cursor: pointer;
