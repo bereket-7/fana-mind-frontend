@@ -2,7 +2,7 @@
     <BContainer class="login-container d-flex align-items-center justify-content-center">
       <BRow class="justify-content-center">
         <BCol md="8" lg="6" xl="4">
-          <BCard class="login-card shadow-lg">
+          <BCard class="login-card shadow-md">
             <BCardBody>
               <!-- Header with Logo -->
               <div class="text-center mb-4">
@@ -17,7 +17,7 @@
                           <!-- Login Form -->
 
               <!-- Login Form -->
-              <BForm @submit.prevent="handleLogin" class="w-600">
+              <BForm @submit.prevent="handleLogin">
                 <!-- Email Input -->
                 <div class="mb-2">
                 <label for="email" class="form-label">Email Address</label>
@@ -40,7 +40,7 @@
                 <label for="password" class="form-label">Password</label>
                 <BInputGroup>
                     <BInputGroupText class="bg-light">
-                    <font-awesome-icon :icon="['fas', 'lock']" class="text-muted" />
+                    <font-awesome-icon :icon="['fas', 'lock']" />
                     </BInputGroupText>
                     <BFormInput
                     id="password"
@@ -105,9 +105,9 @@
               </BForm>
 
                 <!-- Divider -->
-                <div class="divider d-flex align-items-center mb-4">
+                <div class="d-flex align-items-center mb-4">
                   <div class="divider-line"></div>
-                  <div class="divider-text px-3 small text-muted">OR</div>
+                  <div class="px-3 text-dark font-bold">OR</div>
                   <div class="divider-line"></div>
                 </div>
   
@@ -116,13 +116,13 @@
                   <p class="small mb-3 text-muted">Continue with social account</p>
                   <div class="d-flex justify-content-center gap-3">
                     <BButton variant="outline-primary" pill class="social-btn">
-                      <font-awesome-icon :icon="['fab', 'google']" />
+                      <font-awesome-icon :icon="['fab', 'google']" class="text-danger" />
                     </BButton>
                     <BButton variant="outline-primary" pill class="social-btn">
-                      <font-awesome-icon :icon="['fab', 'facebook-f']" />
+                      <font-awesome-icon :icon="['fab', 'facebook-f']" class="text-primary" />
                     </BButton>
                     <BButton variant="outline-primary" pill class="social-btn">
-                      <font-awesome-icon :icon="['fab', 'twitter']" />
+                      <font-awesome-icon :icon="['fab', 'twitter']" class="text-dark" />
                     </BButton>
                   </div>
                 </div>
@@ -187,21 +187,7 @@
     color: #393c40;
   }
 
-.form-control {
-  display: block !important; /* Forces input to show */
-  width: 100% !important;
-  background-color: #fff !important;
-  border: 1px solid #111111 !important;
-}
-
-.form-control:not(:first-child) {
-  border-left: none !important;
-}
-
-  .form-control:focus {
-    box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25);
-    border-color: #28a745;
-  }
+  /* .login-btn styling  */
   
   .login-btn {
     transition: all 0.3s ease;
@@ -216,8 +202,10 @@
     border:#111111;
     border-radius: 2px;
     color: #038f24;
+    outline-color: #111111;
   }
-  
+
+   /* social-btn styling  */
   .social-btn {
     width: 40px;
     height: 40px;
@@ -232,10 +220,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
+  /* divider-line style */
   .divider-line {
     flex: 1;
     height: 1px;
-    background-color: #e9ecef;
+    background-color: #858484;
   }
   
   .cursor-pointer {
