@@ -2,7 +2,7 @@
   <div>
     <!-- Logout Button -->
     <BButton 
-      variant="light"
+      variant="success"
       pill 
       class="logout-btn"
       @click="showModal = true"
