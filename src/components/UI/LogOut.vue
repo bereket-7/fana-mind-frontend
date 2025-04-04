@@ -1,52 +1,52 @@
 <template>
   <div>
     <!-- Logout Button -->
-      <BButton 
+    <BButton 
       variant="success"
       pill 
       class="logout-btn"
-      @click="handleLogout"
+      @click="showModal = true"
     >
       <font-awesome-icon :icon="['fas', 'sign-out-alt']" class="me-3 text-light" />
       <span class="text-light">Logout</span>
     </BButton>
 
-    <!-- Confirmation Modal -->
-  <BModal 
-  v-model="showModal" 
-  title="Confirm Logout"
-  title-class="h5"
-  header-bg-variant="light"
-  hide-footer
-  centered
-  size="sm"
->
-  <p class="my-4 text-center">Are you sure you want to logout?</p>
-  
-  <div class="d-flex justify-content-center gap-3 mt-4">
-    <BButton 
-      variant="outline-secondary" 
-      @click="showModal = false"
-      class="px-4"
+    <!-- Simplified Confirmation Modal -->
+    <BModal 
+      v-model="showModal" 
+      title="Confirm Logout"
+      title-class="h5"
+      header-bg-variant="light"
+      hide-footer
+      centered
+      size="sm"
     >
-      Cancel
-    </BButton>
-    <BButton 
-      variant="danger" 
-      @click="confirmLogout"
-      class="px-4"
-      :disabled="loading"
-    >
-      <template v-if="!loading">
-        Logout
-      </template>
-      <template v-else>
-        <BSpinner small type="grow" class="me-2" />
-        Logging out...
-      </template>
-    </BButton>
-  </div>
-</BModal>
+      <p class="my-4 text-center">Are you sure you want to logout?</p>
+      
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <BButton 
+          variant="outline-secondary" 
+          @click="showModal = false"
+          class="px-4"
+        >
+          Cancel
+        </BButton>
+        <BButton 
+          variant="danger" 
+          @click="confirmLogout"
+          class="px-4"
+          :disabled="loading"
+        >
+          <template v-if="!loading">
+            Logout
+          </template>
+          <template v-else>
+            <BSpinner small type="grow" class="me-2" />
+            Logging out...
+          </template>
+        </BButton>
+      </div>
+    </BModal>
   </div>
 </template>
 
@@ -63,9 +63,6 @@ const router = useRouter();
 const loading = ref(false);
 const showModal = ref(false);
 
-const handleLogout = () => {
-  showModal.value = true;
-};
 const confirmLogout = async () => {
   loading.value = true;
   try {
