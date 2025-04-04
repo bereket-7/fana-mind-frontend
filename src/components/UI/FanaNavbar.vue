@@ -112,6 +112,7 @@ import LogOut from './LogOut.vue';
   align-items: center;
   height: 100%;
   padding: 0.5rem;
+  padding-right: 2.5rem;
 }
 
 .custom-btn {

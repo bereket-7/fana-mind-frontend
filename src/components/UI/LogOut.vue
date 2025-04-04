@@ -1,14 +1,14 @@
 <template>
     <BButton 
-      variant="outline-danger" 
+     variant="light"
       pill 
       class="logout-btn"
       @click="handleLogout"
       :disabled="loading"
     >
       <template v-if="!loading">
-        <font-awesome-icon :icon="['fas', 'sign-out-alt']" class="me-2 text-danger" />
-        
+        <font-awesome-icon :icon="['fas', 'sign-out-alt']" class="me-3 text-light" />
+        <Label class="text-light">Logout</Label>
       </template>
       <template v-else>
         <BSpinner small type="grow" class="me-2" />
@@ -44,11 +44,12 @@
     transition: all 0.3s ease;
     border-width: 3px;
     padding: 0.5rem;
-  }
+    }
   
   .logout-btn:hover {
-    background-color: rgb(255, 251, 251);
-    transform: translateY(-1px);
+    /* background-color: rgb(255, 251, 251); */
+    transform: translateY(-2px);
+    transform: translateX(2px);
     box-shadow: 0 2px 6px rgba(220, 53, 69, 0.2);
   }
   </style>
