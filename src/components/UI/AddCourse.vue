@@ -84,8 +84,8 @@
   
   <script setup>
   import { ref } from 'vue';
-  import TiptapEditor from '@/components/editor/TiptapEditor.vue';
-  import ImageUploader from '@/components/upload/ImageUploader.vue';
+  import TiptapEditor from "src/components/Common/TiptapEditor.vue";
+  import ImageUploader from "src/components/Common/ImageUploader.vue";
   
   const loading = ref(false);
   const form = ref({
@@ -146,4 +146,23 @@
     border-radius: 0.5rem;
     border: 1px solid #dee2e6;
   }
+  /* ProseMirror specific styles */
+.ProseMirror {
+  padding: 0.5rem;
+  min-height: 150px;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+
+.ProseMirror p {
+  margin-bottom: 1rem;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
   </style>
