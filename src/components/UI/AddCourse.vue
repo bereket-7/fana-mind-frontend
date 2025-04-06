@@ -84,8 +84,11 @@
   
   <script setup>
   import { ref } from 'vue';
-  import TiptapEditor from "src/components/Common/TiptapEditor.vue";
-  import ImageUploader from "src/components/Common/ImageUploader.vue";
+  //import TiptapEditor from "src/components/Common/TiptapEditor.vue";
+  //import ImageUploader from "src/components/Common/ImageUploader.vue";
+
+import TiptapEditor from '../Common/TiptapEditor.vue'
+import ImageUploader from '../Common/ImageUploader.vue'
   
   const loading = ref(false);
   const form = ref({
