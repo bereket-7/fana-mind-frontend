@@ -68,7 +68,7 @@
   })
   </script>
   
-  <style>
+  <style scoped>
   .tiptap-editor {
     min-height: 200px;
     background: white;
