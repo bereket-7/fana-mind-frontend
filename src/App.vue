@@ -2,7 +2,9 @@
   <FanaNavbar />
   <SignUp />
   <FanaLogin />
+  <AddCourse />
   <FanaFooter />
+
    <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
@@ -12,6 +14,7 @@
 </template>
 
 <script setup>
+import AddCourse from './components/UI/AddCourse.vue';
 import FanaFooter from './components/UI/FanaFooter.vue';
 import FanaLogin from './components/UI/FanaLogin.vue';
 import FanaNavbar from './components/UI/FanaNavbar.vue';

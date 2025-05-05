@@ -17,4 +17,8 @@ module.exports = {
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "prettier/prettier": "off",
   },
+  globals: {
+    defineProps: 'readonly',
+    defineEmits: 'readonly',
+  },
 };
