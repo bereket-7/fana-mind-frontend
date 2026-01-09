@@ -1,0 +1,88 @@
+// Enhanced SCSS Variables
+:root {
+  // Brand Colors
+  --fana-primary: #667eea;
+  --fana-secondary: #764ba2;
+  --fana-success: #28a745;
+  --fana-danger: #dc3545;
+  --fana-warning: #ffc107;
+  --fana-info: #17a2b8;
+  --fana-light: #f8f9fa;
+  --fana-dark: #343a40;
+
+  // Gradient Colors
+  --fana-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --fana-gradient-success: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  --fana-gradient-warning: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+
+  // Typography
+  --fana-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fana-font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  
+  // Font Sizes
+  --fana-font-size-xs: 0.75rem;
+  --fana-font-size-sm: 0.875rem;
+  --fana-font-size-base: 1rem;
+  --fana-font-size-lg: 1.125rem;
+  --fana-font-size-xl: 1.25rem;
+  --fana-font-size-2xl: 1.5rem;
+  --fana-font-size-3xl: 1.875rem;
+  --fana-font-size-4xl: 2.25rem;
+
+  // Spacing
+  --fana-spacing-xs: 0.25rem;
+  --fana-spacing-sm: 0.5rem;
+  --fana-spacing-md: 1rem;
+  --fana-spacing-lg: 1.5rem;
+  --fana-spacing-xl: 2rem;
+  --fana-spacing-2xl: 3rem;
+
+  // Border Radius
+  --fana-border-radius-sm: 0.25rem;
+  --fana-border-radius-md: 0.5rem;
+  --fana-border-radius-lg: 0.75rem;
+  --fana-border-radius-xl: 1rem;
+
+  // Shadows
+  --fana-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --fana-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --fana-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --fana-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  // Z-Index Scale
+  --fana-z-dropdown: 1000;
+  --fana-z-sticky: 1020;
+  --fana-z-fixed: 1030;
+  --fana-z-modal-backdrop: 1040;
+  --fana-z-modal: 1050;
+  --fana-z-popover: 1060;
+  --fana-z-tooltip: 1070;
+  --fana-z-toast: 1080;
+
+  // Transitions
+  --fana-transition-fast: 150ms ease;
+  --fana-transition-base: 250ms ease;
+  --fana-transition-slow: 350ms ease;
+}
+
+// Dark Theme Variables
+[data-theme="dark"] {
+  --fana-bg-primary: #1a1a1a;
+  --fana-bg-secondary: #2d2d2d;
+  --fana-bg-tertiary: #404040;
+  --fana-text-primary: #ffffff;
+  --fana-text-secondary: #b3b3b3;
+  --fana-text-muted: #808080;
+  --fana-border-color: #404040;
+}
+
+// Light Theme Variables (default)
+[data-theme="light"] {
+  --fana-bg-primary: #ffffff;
+  --fana-bg-secondary: #f8f9fa;
+  --fana-bg-tertiary: #e9ecef;
+  --fana-text-primary: #212529;
+  --fana-text-secondary: #6c757d;
+  --fana-text-muted: #adb5bd;
+  --fana-border-color: #dee2e6;
+}

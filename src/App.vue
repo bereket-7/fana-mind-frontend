@@ -1,46 +1,60 @@
 <template>
-  <FanaNavbar />
-  <SignUp />
-  <FanaLogin />
-  <AddCourse />
-  <FanaFooter />
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <router-link class="navbar-brand" to="/">
+          <font-awesome-icon :icon="['fas', 'graduation-cap']" class="me-2" />
+          Fana Mind
+        </router-link>
+        
+        <div class="navbar-nav ms-auto">
+          <router-link class="nav-link" to="/">Home</router-link>
+          <router-link class="nav-link" to="/about">About</router-link>
+        </div>
+      </div>
+    </nav>
 
-   <!-- <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/about">Contact</router-link>
-  </nav> -->
-  <router-view />
+    <main class="container-fluid py-4">
+      <router-view />
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container text-center">
+        <p>&copy; 2024 Fana Mind. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
 </template>
 
-<script setup>
-import AddCourse from './components/UI/AddCourse.vue';
-import FanaFooter from './components/UI/FanaFooter.vue';
-import FanaLogin from './components/UI/FanaLogin.vue';
-import FanaNavbar from './components/UI/FanaNavbar.vue';
-import SignUp from './components/UI/SignUp.vue';
-
+<script setup lang="ts">
+// Simple setup for now - we'll add components gradually
 </script>
 
 <style>
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+#app {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-nav {
-  padding: 30px;
+main {
+  flex: 1;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-} */
+.nav-link {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+}
 </style>

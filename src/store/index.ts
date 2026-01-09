@@ -1,13 +1,11 @@
-import { defineStore } from "pinia";
+import { createPinia } from "pinia";
 
-export const useStore = defineStore("main", {
-  state: () => ({
-    // Add state here
-  }),
-  getters: {
-    // Add getters here
-  },
-  actions: {
-    // Add actions here
-  },
-});
+// Create the main pinia instance
+export const pinia = createPinia();
+
+// Re-export all stores
+export * from './modules/auth';
+export * from './modules/courses';
+export * from './modules/notifications';
+export * from './modules/analytics';
+export * from './modules/ui';
