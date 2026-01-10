@@ -19,9 +19,9 @@
             
             <!-- Main Heading -->
             <h1 class="hero-title">
-              Transform Your
-              <span class="text-gradient">Learning Journey</span>
-              with Fana Mind
+              <span class="text-gradient">Transform Your</span><br>
+              <span class="text-gradient">Learning Journey</span><br>
+              <span class="text-gradient">with Fana Mind</span><br>
             </h1>
             
             <!-- Description -->
@@ -195,7 +195,7 @@
           </div>
           
           <div class="cta-actions">
-            <button class="btn-primary-cta" @click="getStarted">
+            <button class="btn-secondary-cta" @click="getStarted">
               <font-awesome-icon :icon="['fas', 'rocket']" />
               Get Started Free
             </button>

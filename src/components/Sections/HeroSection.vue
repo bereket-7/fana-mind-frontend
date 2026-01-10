@@ -20,7 +20,8 @@
           </div>
           
           <h1 class="hero-title animate-fade-in-up stagger-1">
-            Transform Your
+            
+            <span class="text-gradient">Transform Your</span>
             <span class="text-gradient">Learning Journey</span>
             with Fana Mind
           </h1>
