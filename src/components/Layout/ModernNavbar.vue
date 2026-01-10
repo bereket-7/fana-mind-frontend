@@ -12,21 +12,33 @@
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="navbar-nav desktop-nav">
+      <div class="desktop-nav-links">
         <router-link 
           v-for="item in navItems" 
           :key="item.name"
           :to="item.path" 
-          class="nav-link"
+          class="nav-item-link"
           :class="{ 'active': $route.path === item.path }"
         >
           <font-awesome-icon :icon="item.icon" class="nav-icon" />
-          {{ item.name }}
+          <span>{{ item.name }}</span>
         </router-link>
       </div>
 
       <!-- Right Side Actions -->
       <div class="navbar-actions">
+        <!-- Auth Actions -->
+        <div class="auth-actions">
+          <router-link to="/login" class="action-btn-link login-btn">
+            <font-awesome-icon :icon="['fas', 'sign-in-alt']" />
+            <span>Login</span>
+          </router-link>
+          <router-link to="/register" class="action-btn-link get-started-btn">
+            <font-awesome-icon :icon="['fas', 'rocket']" />
+            <span>Get Started</span>
+          </router-link>
+        </div>
+
         <!-- Theme Toggle -->
         <button 
           @click="toggleTheme" 
@@ -322,16 +334,21 @@ onUnmounted(() => {
 }
 
 .navbar-container {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 var(--fana-space-6);
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  gap: var(--fana-space-4);
 }
 
 .navbar-brand {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+
   .brand-link {
     display: flex;
     align-items: center;
@@ -361,55 +378,107 @@ onUnmounted(() => {
   }
 }
 
-.desktop-nav {
-  display: flex;
+.desktop-nav-links {
+  display: none;
   align-items: center;
-  gap: var(--fana-space-8);
-  
-  @media (max-width: 1024px) {
-    display: none;
-  }
-}
+  justify-content: center;
+  gap: var(--fana-space-1);
+  flex-grow: 0;
 
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: var(--fana-space-2);
-  padding: var(--fana-space-3) var(--fana-space-4);
-  border-radius: var(--fana-radius-lg);
-  text-decoration: none;
-  color: var(--fana-text-secondary);
-  font-weight: 500;
-  transition: all var(--fana-transition-base);
-  position: relative;
-  
-  &:hover {
-    color: var(--fana-primary);
-    background: rgba(99, 102, 241, 0.1);
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: row !important;
   }
   
-  &.active {
-    color: var(--fana-primary);
-    background: rgba(99, 102, 241, 0.1);
+  .nav-item-link {
+    display: flex;
+    align-items: center;
+    gap: var(--fana-space-2);
+    padding: var(--fana-space-2) var(--fana-space-4);
+    text-decoration: none;
+    color: var(--fana-text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--fana-radius-md);
+    transition: all var(--fana-transition-base);
+    white-space: nowrap;
     
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 3px;
-      background: var(--fana-gradient-primary);
-      border-radius: var(--fana-radius-full);
+    &:hover, &.active {
+      color: var(--fana-primary);
+      background: var(--fana-primary-light);
+    }
+    
+    [data-theme="dark"] &:hover, [data-theme="dark"] &.active {
+        background: rgba(99, 102, 241, 0.1);
+    }
+    
+    .nav-icon {
+      font-size: 1.1em;
+    }
+
+    span {
+        display: inline-block;
     }
   }
 }
 
 .navbar-actions {
+  flex: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--fana-space-4);
+  
+  @media (max-width: 1023px) {
+    gap: var(--fana-space-3);
+  }
+}
+
+.auth-actions {
+  display: none;
+  align-items: center;
+  gap: var(--fana-space-3);
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.action-btn-link {
+  display: flex;
+  align-items: center;
+  gap: var(--fana-space-2);
+  padding: var(--fana-space-2) var(--fana-space-5);
+  border-radius: var(--fana-radius-lg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--fana-transition-base);
+  white-space: nowrap;
+
+  &.login-btn {
+    background: var(--fana-gradient-secondary);
+    color: white;
+    box-shadow: var(--fana-shadow-md);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--fana-shadow-lg);
+      filter: brightness(1.1);
+    }
+  }
+
+  &.get-started-btn {
+    background: var(--fana-gradient-primary);
+    color: white;
+    box-shadow: var(--fana-shadow-md);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--fana-shadow-lg);
+      filter: brightness(1.1);
+    }
+  }
 }
 
 .action-btn {
@@ -639,7 +708,7 @@ onUnmounted(() => {
 }
 
 .mobile-menu-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 32px;
@@ -648,9 +717,10 @@ onUnmounted(() => {
   border: none;
   cursor: pointer;
   padding: 0;
+  margin-left: var(--fana-space-2);
   
-  @media (max-width: 1024px) {
-    display: flex;
+  @media (min-width: 1024px) {
+    display: none;
   }
   
   span {

@@ -16,7 +16,7 @@
         <div class="hero-text">
           <div class="hero-badge animate-fade-in-up">
             <font-awesome-icon :icon="['fas', 'sparkles']" />
-            <span>AI-Powered Learning Platform</span>
+            <br><span>AI-Powered Learning Platform</span>
           </div>
           
           <h1 class="hero-title animate-fade-in-up stagger-1">
