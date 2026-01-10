@@ -1,5 +1,5 @@
 // Import variables first
-@import './variables.scss';
+@use './variables.scss' as *;
 
 // Base Styles
 * {
