@@ -6,7 +6,7 @@
         <!-- Brand Logo -->
         <router-link to="/" class="navbar-brand">
           <div class="brand-icon">
-            <font-awesome-icon :icon="['fas', 'graduation-cap']" />
+            <font-awesome-icon :icon="['fas', 'brain']" />
           </div>
           <span class="brand-text">Fana Mind</span>
         </router-link>
@@ -18,15 +18,15 @@
             <span>Home</span>
           </router-link>
           <router-link to="/courses" class="nav-link">
-            <font-awesome-icon :icon="['fas', 'book']" />
+            <font-awesome-icon :icon="['fas', 'graduation-cap']" />
             <span>Courses</span>
           </router-link>
           <router-link to="/about" class="nav-link">
-            <font-awesome-icon :icon="['fas', 'info-circle']" />
+            <font-awesome-icon :icon="['fas', 'users']" />
             <span>About</span>
           </router-link>
           <router-link to="/dashboard" class="nav-link">
-            <font-awesome-icon :icon="['fas', 'tachometer-alt']" />
+            <font-awesome-icon :icon="['fas', 'chart-line']" />
             <span>Dashboard</span>
           </router-link>
         </div>
@@ -59,15 +59,15 @@
             <span>Home</span>
           </router-link>
           <router-link to="/courses" class="mobile-nav-link" @click="closeMobileMenu">
-            <font-awesome-icon :icon="['fas', 'book']" />
+            <font-awesome-icon :icon="['fas', 'graduation-cap']" />
             <span>Courses</span>
           </router-link>
           <router-link to="/about" class="mobile-nav-link" @click="closeMobileMenu">
-            <font-awesome-icon :icon="['fas', 'info-circle']" />
+            <font-awesome-icon :icon="['fas', 'users']" />
             <span>About</span>
           </router-link>
           <router-link to="/dashboard" class="mobile-nav-link" @click="closeMobileMenu">
-            <font-awesome-icon :icon="['fas', 'tachometer-alt']" />
+            <font-awesome-icon :icon="['fas', 'chart-line']" />
             <span>Dashboard</span>
           </router-link>
         </div>
@@ -97,7 +97,7 @@
           <div class="footer-brand">
             <div class="brand-logo">
               <div class="brand-icon">
-                <font-awesome-icon :icon="['fas', 'graduation-cap']" />
+                <font-awesome-icon :icon="['fas', 'brain']" />
               </div>
               <span class="brand-text">Fana Mind</span>
             </div>
@@ -242,9 +242,9 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: var(--fana-z-fixed);
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: var(--fana-backdrop-blur);
+  background: var(--fana-bg-primary);
   border-bottom: 1px solid var(--fana-border-color);
+  box-shadow: var(--fana-shadow-sm);
   transition: all var(--fana-transition-base);
 }
 
@@ -264,14 +264,16 @@ onUnmounted(() => {
   gap: var(--fana-space-3);
   text-decoration: none;
   color: var(--fana-text-primary);
-  font-weight: 700;
+  font-weight: 800;
   font-size: var(--fana-text-xl);
   transition: all var(--fana-transition-base);
+  font-family: var(--fana-font-family-display);
 }
 
 .navbar-brand:hover {
   color: var(--fana-primary);
   text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .brand-icon {
@@ -285,31 +287,50 @@ onUnmounted(() => {
   color: white;
   font-size: 1.5rem;
   box-shadow: var(--fana-shadow-colored);
+  transition: all var(--fana-transition-base);
+}
+
+.navbar-brand:hover .brand-icon {
+  transform: scale(1.05);
+  box-shadow: var(--fana-shadow-glow);
+}
+
+.brand-text {
+  background: var(--fana-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .navbar-nav {
   display: flex;
   align-items: center;
-  gap: var(--fana-space-2);
+  gap: var(--fana-space-1);
+  flex: 1;
+  justify-content: center;
+  margin: 0 var(--fana-space-8);
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   gap: var(--fana-space-2);
-  padding: var(--fana-space-3) var(--fana-space-4);
+  padding: var(--fana-space-3) var(--fana-space-5);
   border-radius: var(--fana-radius-lg);
   text-decoration: none;
   color: var(--fana-text-secondary);
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--fana-text-sm);
   transition: all var(--fana-transition-base);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
   color: var(--fana-primary);
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(99, 102, 241, 0.08);
   text-decoration: none;
   transform: translateY(-1px);
 }
@@ -317,6 +338,7 @@ onUnmounted(() => {
 .nav-link.router-link-active {
   color: var(--fana-primary);
   background: rgba(99, 102, 241, 0.1);
+  font-weight: 700;
 }
 
 .navbar-actions {
@@ -409,9 +431,9 @@ onUnmounted(() => {
   top: 100%;
   left: 0;
   right: 0;
-  background: var(--fana-bg-card);
+  background: var(--fana-bg-primary);
   border-bottom: 1px solid var(--fana-border-color);
-  backdrop-filter: var(--fana-backdrop-blur);
+  box-shadow: var(--fana-shadow-lg);
   padding: var(--fana-space-6);
   transform: translateY(-100%);
   opacity: 0;
