@@ -1,53 +1,88 @@
-// Enhanced SCSS Variables
+// Modern Design System - Fana Mind Premium
 :root {
-  // Brand Colors
-  --fana-primary: #667eea;
-  --fana-secondary: #764ba2;
-  --fana-success: #28a745;
-  --fana-danger: #dc3545;
-  --fana-warning: #ffc107;
-  --fana-info: #17a2b8;
-  --fana-light: #f8f9fa;
-  --fana-dark: #343a40;
-
-  // Gradient Colors
-  --fana-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --fana-gradient-success: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-  --fana-gradient-warning: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
-
-  // Typography
-  --fana-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --fana-font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  // Primary Brand Colors - Modern Purple Gradient
+  --fana-primary: #6366f1;
+  --fana-primary-light: #818cf8;
+  --fana-primary-dark: #4f46e5;
+  --fana-secondary: #ec4899;
+  --fana-secondary-light: #f472b6;
+  --fana-secondary-dark: #db2777;
   
-  // Font Sizes
-  --fana-font-size-xs: 0.75rem;
-  --fana-font-size-sm: 0.875rem;
-  --fana-font-size-base: 1rem;
-  --fana-font-size-lg: 1.125rem;
-  --fana-font-size-xl: 1.25rem;
-  --fana-font-size-2xl: 1.5rem;
-  --fana-font-size-3xl: 1.875rem;
-  --fana-font-size-4xl: 2.25rem;
+  // Accent Colors
+  --fana-accent-blue: #06b6d4;
+  --fana-accent-green: #10b981;
+  --fana-accent-orange: #f59e0b;
+  --fana-accent-red: #ef4444;
+  
+  // Neutral Colors - Modern Gray Scale
+  --fana-gray-50: #f8fafc;
+  --fana-gray-100: #f1f5f9;
+  --fana-gray-200: #e2e8f0;
+  --fana-gray-300: #cbd5e1;
+  --fana-gray-400: #94a3b8;
+  --fana-gray-500: #64748b;
+  --fana-gray-600: #475569;
+  --fana-gray-700: #334155;
+  --fana-gray-800: #1e293b;
+  --fana-gray-900: #0f172a;
 
-  // Spacing
-  --fana-spacing-xs: 0.25rem;
-  --fana-spacing-sm: 0.5rem;
-  --fana-spacing-md: 1rem;
-  --fana-spacing-lg: 1.5rem;
-  --fana-spacing-xl: 2rem;
-  --fana-spacing-2xl: 3rem;
+  // Premium Gradients
+  --fana-gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  --fana-gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --fana-gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --fana-gradient-warning: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --fana-gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --fana-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
 
-  // Border Radius
-  --fana-border-radius-sm: 0.25rem;
-  --fana-border-radius-md: 0.5rem;
-  --fana-border-radius-lg: 0.75rem;
-  --fana-border-radius-xl: 1rem;
+  // Typography - Premium Font Stack
+  --fana-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --fana-font-family-display: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fana-font-family-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+  
+  // Font Sizes - Fluid Typography
+  --fana-text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --fana-text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --fana-text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --fana-text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --fana-text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --fana-text-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  --fana-text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+  --fana-text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+  --fana-text-5xl: clamp(3rem, 2.5rem + 2.5vw, 4rem);
 
-  // Shadows
-  --fana-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --fana-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --fana-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --fana-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  // Spacing System - 8pt Grid
+  --fana-space-1: 0.25rem;   // 4px
+  --fana-space-2: 0.5rem;    // 8px
+  --fana-space-3: 0.75rem;   // 12px
+  --fana-space-4: 1rem;      // 16px
+  --fana-space-5: 1.25rem;   // 20px
+  --fana-space-6: 1.5rem;    // 24px
+  --fana-space-8: 2rem;      // 32px
+  --fana-space-10: 2.5rem;   // 40px
+  --fana-space-12: 3rem;     // 48px
+  --fana-space-16: 4rem;     // 64px
+  --fana-space-20: 5rem;     // 80px
+  --fana-space-24: 6rem;     // 96px
+
+  // Border Radius - Modern Rounded Corners
+  --fana-radius-sm: 0.375rem;
+  --fana-radius-md: 0.5rem;
+  --fana-radius-lg: 0.75rem;
+  --fana-radius-xl: 1rem;
+  --fana-radius-2xl: 1.5rem;
+  --fana-radius-3xl: 2rem;
+  --fana-radius-full: 9999px;
+
+  // Shadows - Layered Depth System
+  --fana-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --fana-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --fana-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --fana-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --fana-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --fana-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --fana-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  --fana-shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+  --fana-shadow-colored: 0 10px 25px -5px rgba(99, 102, 241, 0.2);
 
   // Z-Index Scale
   --fana-z-dropdown: 1000;
@@ -59,30 +94,66 @@
   --fana-z-tooltip: 1070;
   --fana-z-toast: 1080;
 
-  // Transitions
-  --fana-transition-fast: 150ms ease;
-  --fana-transition-base: 250ms ease;
-  --fana-transition-slow: 350ms ease;
+  // Transitions - Smooth Animations
+  --fana-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fana-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fana-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --fana-transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  // Backdrop Blur
+  --fana-backdrop-blur: blur(16px);
+  --fana-backdrop-blur-sm: blur(8px);
+  --fana-backdrop-blur-lg: blur(24px);
 }
 
 // Dark Theme Variables
 [data-theme="dark"] {
-  --fana-bg-primary: #1a1a1a;
-  --fana-bg-secondary: #2d2d2d;
-  --fana-bg-tertiary: #404040;
-  --fana-text-primary: #ffffff;
-  --fana-text-secondary: #b3b3b3;
-  --fana-text-muted: #808080;
-  --fana-border-color: #404040;
+  --fana-bg-primary: #0f172a;
+  --fana-bg-secondary: #1e293b;
+  --fana-bg-tertiary: #334155;
+  --fana-bg-card: rgba(30, 41, 59, 0.8);
+  --fana-bg-glass: rgba(15, 23, 42, 0.8);
+  --fana-text-primary: #f8fafc;
+  --fana-text-secondary: #cbd5e1;
+  --fana-text-muted: #94a3b8;
+  --fana-border-color: #334155;
+  --fana-border-light: #475569;
+  
+  // Dark mode gradients
+  --fana-gradient-card: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.6) 100%);
+  --fana-gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
 
 // Light Theme Variables (default)
 [data-theme="light"] {
   --fana-bg-primary: #ffffff;
-  --fana-bg-secondary: #f8f9fa;
-  --fana-bg-tertiary: #e9ecef;
-  --fana-text-primary: #212529;
-  --fana-text-secondary: #6c757d;
-  --fana-text-muted: #adb5bd;
-  --fana-border-color: #dee2e6;
+  --fana-bg-secondary: #f8fafc;
+  --fana-bg-tertiary: #f1f5f9;
+  --fana-bg-card: rgba(255, 255, 255, 0.9);
+  --fana-bg-glass: rgba(255, 255, 255, 0.8);
+  --fana-text-primary: #0f172a;
+  --fana-text-secondary: #475569;
+  --fana-text-muted: #64748b;
+  --fana-border-color: #e2e8f0;
+  --fana-border-light: #f1f5f9;
+  
+  // Light mode gradients
+  --fana-gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
+  --fana-gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+}
+
+// Auto theme based on system preference
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --fana-bg-primary: #0f172a;
+    --fana-bg-secondary: #1e293b;
+    --fana-bg-tertiary: #334155;
+    --fana-bg-card: rgba(30, 41, 59, 0.8);
+    --fana-bg-glass: rgba(15, 23, 42, 0.8);
+    --fana-text-primary: #f8fafc;
+    --fana-text-secondary: #cbd5e1;
+    --fana-text-muted: #94a3b8;
+    --fana-border-color: #334155;
+    --fana-border-light: #475569;
+  }
 }
