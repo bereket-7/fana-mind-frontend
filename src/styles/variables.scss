@@ -33,6 +33,8 @@
   --fana-gradient-warning: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   --fana-gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   --fana-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  --fana-gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --fana-gradient-cool: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
 
   // Typography - Premium Font Stack
   --fana-font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -124,18 +126,18 @@
   --fana-gradient-hero: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
 }
 
-// Light Theme Variables (default)
-[data-theme="light"] {
+// Light Theme (Default)
+:root, [data-theme="light"] {
   --fana-bg-primary: #ffffff;
-  --fana-bg-secondary: #f8fafc;
-  --fana-bg-tertiary: #f1f5f9;
+  --fana-bg-secondary: var(--fana-gray-50);
+  --fana-bg-tertiary: var(--fana-gray-100);
   --fana-bg-card: rgba(255, 255, 255, 0.9);
   --fana-bg-glass: rgba(255, 255, 255, 0.8);
-  --fana-text-primary: #0f172a;
-  --fana-text-secondary: #475569;
-  --fana-text-muted: #64748b;
-  --fana-border-color: #e2e8f0;
-  --fana-border-light: #f1f5f9;
+  --fana-text-primary: var(--fana-gray-900);
+  --fana-text-secondary: var(--fana-gray-700);
+  --fana-text-muted: var(--fana-gray-600);
+  --fana-border-color: var(--fana-gray-200);
+  --fana-border-light: var(--fana-gray-100);
   
   // Light mode gradients
   --fana-gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);

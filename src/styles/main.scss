@@ -81,7 +81,8 @@ h6 { font-size: var(--fana-text-lg); }
 
 p {
   margin-bottom: var(--fana-space-4);
-  color: var(--fana-text-secondary);
+  color: var(--fana-text-primary);
+  font-weight: 400;
 }
 
 // Modern Utility Classes

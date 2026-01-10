@@ -25,7 +25,7 @@
             </h1>
             
             <!-- Description -->
-            <p class="hero-description">
+            <p class="hero-description hero-text-dark">
               Experience the future of education with our cutting-edge AI-powered learning management system. 
               Personalized courses, real-time analytics, and collaborative learning environments designed to 
               accelerate your growth.
@@ -457,10 +457,16 @@ const learnMore = () => {
 
 .hero-description {
   font-size: var(--fana-text-lg);
-  color: var(--fana-text-secondary);
+  color: var(--fana-text-primary);
   line-height: 1.7;
   margin-bottom: var(--fana-space-8);
   max-width: 600px;
+  font-weight: 500;
+}
+
+.hero-text-dark {
+  color: var(--fana-gray-800) !important;
+  font-weight: 600 !important;
 }
 
 .hero-stats {
@@ -887,16 +893,19 @@ const learnMore = () => {
   font-weight: 800;
   margin-bottom: var(--fana-space-6);
   color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .cta-description {
   font-size: var(--fana-text-lg);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.7;
   margin-bottom: var(--fana-space-10);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .cta-actions {
