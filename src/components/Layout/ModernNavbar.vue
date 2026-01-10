@@ -329,6 +329,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  gap: var(--fana-space-6);
 }
 
 .navbar-brand {
@@ -362,46 +363,33 @@ onUnmounted(() => {
 }
 
 .desktop-nav {
-  display: flex;
-  align-items: center;
-  gap: var(--fana-space-8);
+  display: none;
+  gap: var(--fana-space-1);
+  margin: 0 var(--fana-space-6);
   
-  @media (max-width: 1024px) {
-    display: none;
-  }
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: var(--fana-space-2);
-  padding: var(--fana-space-3) var(--fana-space-4);
-  border-radius: var(--fana-radius-lg);
-  text-decoration: none;
-  color: var(--fana-text-secondary);
-  font-weight: 500;
-  transition: all var(--fana-transition-base);
-  position: relative;
-  
-  &:hover {
-    color: var(--fana-primary);
-    background: rgba(99, 102, 241, 0.1);
+  @media (min-width: 1024px) {
+    display: flex;
   }
   
-  &.active {
-    color: var(--fana-primary);
-    background: rgba(99, 102, 241, 0.1);
+  .nav-link {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--fana-space-2);
+    padding: var(--fana-space-2) var(--fana-space-4);
+    text-decoration: none;
+    color: var(--fana-text-secondary);
+    font-weight: 500;
+    border-radius: var(--fana-radius-md);
+    transition: all var(--fana-transition-base);
+    white-space: nowrap;
     
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 3px;
-      background: var(--fana-gradient-primary);
-      border-radius: var(--fana-radius-full);
+    &:hover, &.active {
+      color: var(--fana-primary);
+      background: var(--fana-primary-light);
+    }
+    
+    .nav-icon {
+      font-size: 1.1em;
     }
   }
 }
@@ -410,6 +398,11 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: var(--fana-space-4);
+  margin-left: auto;
+  
+  @media (max-width: 1023px) {
+    gap: var(--fana-space-3);
+  }
 }
 
 .action-btn {
@@ -639,7 +632,7 @@ onUnmounted(() => {
 }
 
 .mobile-menu-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 32px;
@@ -648,9 +641,10 @@ onUnmounted(() => {
   border: none;
   cursor: pointer;
   padding: 0;
+  margin-left: var(--fana-space-2);
   
-  @media (max-width: 1024px) {
-    display: flex;
+  @media (min-width: 1024px) {
+    display: none;
   }
   
   span {
