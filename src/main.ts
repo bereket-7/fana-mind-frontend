@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
-import { pinia } from "./store";
+import { createPinia } from "pinia";
 import { createBootstrap } from "bootstrap-vue-next";
 
 // Bootstrap imports
@@ -23,6 +23,9 @@ library.add(fas, fab);
 // Create Vue app
 const app = createApp(App);
 
+// Create and use Pinia store
+const pinia = createPinia();
+
 // Configure app
 app.use(pinia);
 app.use(createBootstrap());
@@ -36,9 +39,6 @@ app.config.errorHandler = (error, instance, info) => {
   console.error('Global error:', error);
   console.error('Component instance:', instance);
   console.error('Error info:', info);
-  
-  // You can send error to analytics service here
-  // analyticsService.trackEvent('app_error', { error: error.message, info });
 };
 
 // Global warning handler
@@ -53,16 +53,20 @@ if (import.meta.env.DEV) {
   app.config.performance = true;
 }
 
-// Initialize auth state
-import { useAuthStore } from './store/modules/auth';
-import { useUIStore } from './store/modules/ui';
+// Ensure DOM is ready before mounting
+const mountApp = () => {
+  const appElement = document.getElementById('app');
+  if (appElement) {
+    app.mount('#app');
+    console.log('✅ Fana Mind app mounted successfully');
+  } else {
+    console.error('❌ Could not find #app element');
+  }
+};
 
-const authStore = useAuthStore();
-const uiStore = useUIStore();
-
-// Initialize stores
-authStore.initializeAuth();
-uiStore.initializeTheme();
-
-// Mount app
-app.mount("#app");
+// Mount when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', mountApp);
+} else {
+  mountApp();
+}
